@@ -1,0 +1,5 @@
+eclipse-formatter.xml
+.vscode
+*.class
+*.out
+*.so
