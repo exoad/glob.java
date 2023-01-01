@@ -17,7 +17,7 @@ public class dgui_LeftSide
     public leftside_ButtonsTop()
     {
       setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-      setPreferredSize(new Dimension(getSize().width, getSize().height / 8));
+      setPreferredSize(new Dimension(const_Consts.MASTER_DIVIDER_LOCALE, const_Consts.LEFT_DIVIDER_LOCALE));
       JButton jb = new JButton();
       jb.setIcon(use_AssetFetcher.fetcher.getFromAsImageIcon(16, 16,
           "assets/btns/blue2green/" + (const_Consts.RNG.nextInt(10) + 1) + ".png"));
@@ -32,7 +32,6 @@ public class dgui_LeftSide
     public leftside_Explorer()
     {
       setOpaque(true);
-      setPreferredSize(new Dimension(getSize().width, getSize().height - getSize().height / 8));
 
     }
   }
