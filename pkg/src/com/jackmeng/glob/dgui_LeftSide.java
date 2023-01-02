@@ -3,7 +3,6 @@ package com.jackmeng.glob;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import java.awt.*;
 
@@ -22,7 +21,6 @@ public class dgui_LeftSide
       jb.setIcon(use_AssetFetcher.fetcher.getFromAsImageIcon(16, 16,
           "assets/btns/blue2green/" + (const_Consts.RNG.nextInt(10) + 1) + ".png"));
 
-      add(jb);
     }
   }
 

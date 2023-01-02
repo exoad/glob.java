@@ -2,10 +2,9 @@ package com.jackmeng.glob;
 
 import javax.swing.JSplitPane;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
-import com.github.weisj.darklaf.theme.SolarizedLightTheme;
-import com.github.weisj.darklaf.LafManager;
 
 import java.awt.*;
 
@@ -31,14 +30,15 @@ public final class Glob
 
     JSplitPane masterPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
     masterPane.setPreferredSize(
-        new Dimension(g.getPreferredSize().width, g.getPreferredSize().height - const_Consts.BOTTOM_BAR_HEIGHT));
+        const_Consts.TOP_MASTER_DIM);
 
     dgui_LeftSide left = new dgui_LeftSide();
     dgui_RightSide right = new dgui_RightSide();
 
     left.setPreferredSize(new Dimension(g.getPreferredSize().width / 6, masterPane.getPreferredSize().height));
     right.setPreferredSize(
-        new Dimension(g.getPreferredSize().width - left.getPreferredSize().width, masterPane.getPreferredSize().height));
+        new Dimension(g.getPreferredSize().width - left.getPreferredSize().width,
+            masterPane.getPreferredSize().height));
 
     masterPane.setDividerLocation(g.getPreferredSize().width / 6);
 
@@ -51,9 +51,9 @@ public final class Glob
   }
 
   public static void main(String[] args)
+      throws Exception
   {
-    LafManager.setTheme(new SolarizedLightTheme());
-    LafManager.install();
+    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
     SwingUtilities.invokeLater(new Glob().g);
   }
 }
