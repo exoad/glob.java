@@ -1,4 +1,4 @@
-package com.jackmeng.glob;
+package com.jackmeng.glob.util;
 
 import java.awt.image.*;
 

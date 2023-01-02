@@ -5,6 +5,14 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 
+import com.jackmeng.glob.gui.dgui_BottomBar;
+import com.jackmeng.glob.gui.dgui_LeftSide;
+import com.jackmeng.glob.gui.dgui_RightSide;
+import com.jackmeng.glob.gui.gui_MainFrame;
+
+import io.materialtheme.darkstackoverflow.DarkStackOverflowTheme;
+import mdlaf.MaterialLookAndFeel;
+import mdlaf.themes.MaterialOceanicTheme;
 
 import java.awt.*;
 
@@ -46,14 +54,24 @@ public final class Glob
     masterPane.setRightComponent(right);
 
     g.getContentPane().setLayout(new BorderLayout());
-    g.getContentPane().add(masterPane, BorderLayout.NORTH);
-    g.getContentPane().add(new dgui_BottomBar(), BorderLayout.SOUTH);
+
+    JSplitPane jsp = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+    jsp.setDividerLocation(const_Consts.TOP_MASTER_DIM.height);
+    jsp.setDividerSize(0);
+    jsp.setTopComponent(masterPane);
+    jsp.setBottomComponent(new dgui_BottomBar());
+
+    masterPane.revalidate();
+    jsp.revalidate();
+
+    g.getContentPane().add(jsp, BorderLayout.CENTER);
   }
 
   public static void main(String[] args)
       throws Exception
   {
-    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+    UIManager.setLookAndFeel(MaterialLookAndFeel.class.getName());
+    MaterialLookAndFeel.changeTheme(new MaterialOceanicTheme());
     SwingUtilities.invokeLater(new Glob().g);
   }
 }

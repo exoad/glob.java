@@ -1,6 +1,8 @@
-package com.jackmeng.glob;
+package com.jackmeng.glob.gui;
 
 import javax.swing.JFrame;
+
+import com.jackmeng.glob.util.use_AssetFetcher;
 
 public class gui_MainFrame
     extends JFrame

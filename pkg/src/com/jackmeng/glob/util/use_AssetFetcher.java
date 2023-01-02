@@ -1,4 +1,4 @@
-package com.jackmeng.glob;
+package com.jackmeng.glob.util;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -36,7 +36,7 @@ public class use_AssetFetcher
           java.util.Objects.requireNonNull(getClass().getResource(path)));
     } catch (NullPointerException e)
     {
-      return new ImageIcon(use_Image.NO_TEXTURE);
+      return new ImageIcon(path);
     }
     lazyResource_cache.put(path, i);
     return i;
